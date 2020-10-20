@@ -1,18 +1,18 @@
 <template>
   <div>
-      <meu-header />
+      <cabecalho />
       <principal />
   </div>
 </template>
 
 <script>
-  import MeuHeader from '../meuHeader/MeuHeader.vue';
+  import Cabecalho from '../cabecalho/Cabecalho.vue';
   import Principal from '../principal/Principal.vue';
 
   export default {
   
   components: {
-    'meu-header': MeuHeader,    
+    'cabecalho': Cabecalho,    
     'principal': Principal
   },
 

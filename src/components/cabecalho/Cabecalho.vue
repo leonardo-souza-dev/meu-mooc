@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'meu-header',
+  name: 'cabecalho',
   data () {
     return {
       matricula: 6804151514

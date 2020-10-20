@@ -1,17 +1,14 @@
 <template>
   <section>
-    <h1>Teste de Unidade</h1>
+    <h1>{{ treinamento.nome }}</h1>
     <div>
       <ul>
-        <li>aula 1</li>
-        <li>aula 2</li>
-        <li>aula 3</li>
-        <li>aula 4</li>
-        <li>aula 5</li>
+        <li v-for="nomeAula in treinamento.nomesAulas">{{ nomeAula }}</li>
       </ul>
     </div>
+    <h2>{{ treinamento.videoAulaSendoExibida.nome }}</h2>
     <video width="320" height="240" controls>
-      <source src="https://www.w3schools.com/tags/movie.mp4" type="video/mp4" />
+      <source v-bind:src="treinamento.videoAulaSendoExibida.uri" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   </section>
@@ -20,11 +17,23 @@
 <script>
   export default {
     name: 'treinamento',
-      data () {
-        return {
-          msg: 'Welcome to Your Vue.js App'
+    data () {
+      return {
+        treinamento: {}
+      }
+    },
+    created() {
+      this.treinamento = {
+        id: 99,
+        nome: 'browser stack',
+        nomesAulas: ['montando ambiente', 'hello world', 'conclusoes'],
+        videoAulaSendoExibida: {
+          num: 1,
+          nome: 'montando ambiente',
+          uri: 'https://www.w3schools.com/tags/movie.mp4'
         }
       }
+    }
   }
 </script>
 
