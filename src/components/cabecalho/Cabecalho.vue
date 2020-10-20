@@ -1,6 +1,6 @@
 <template>
     <header>
-        <h1>mooc</h1>
+        <h1><router-link :to="{ name: 'dashboard' }">mooc</router-link></h1>
         <ul>
             <li>treinamentos</li>
             <li>dashboard</li>

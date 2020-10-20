@@ -1,26 +1,38 @@
 <template>
   <div>
-    <cabecalho />
-    <lista-de-treinamentos />
+    <p>meu-mooc</p>
+    <input type="text" placeholder="matrícula" />
+    <input type="password" placeholder="senha" />
+    <router-link :to="{ name: 'dashboard' }">Login</router-link>
   </div>
 </template>
 
 <script>
-  import ListaDeTreinamentos from '../listaDeTreinamentos/ListaDeTreinamentos.vue'
   import Cabecalho from '../cabecalho/Cabecalho.vue';
 
-  export default {  
+  export default {
     components: {
-      'cabecalho': Cabecalho,    
-      'lista-de-treinamentos': ListaDeTreinamentos
+      'cabecalho': Cabecalho
     },
-    name: 'app',
+    name: 'treinamento',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        treinamento: {}
+      }
+    },
+    created() {
+      this.treinamento = {
+        id: 99,
+        nome: 'browser stack',
+        nomesAulas: ['montando ambiente', 'hello world', 'conclusoes'],
+        videoAulaSendoExibida: {
+          num: 1,
+          nome: 'montando ambiente',
+          uri: 'https://www.w3schools.com/tags/movie.mp4'
+        }
       }
     }
-}
+  }
 </script>
 
 <style>
