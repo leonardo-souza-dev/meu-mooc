@@ -2,9 +2,12 @@
   <div>
     <cabecalho />
     <h2>Dashboard</h2>
+    <h3>Meus treinamentos em andamento</h3>
     <ul>
       <li v-for="cursoProgresso in progressoCursosUsuario.cursosProgresso">
-        {{ cursoProgresso.nome }} - progresso {{ cursoProgresso.progresso }}%
+        <router-link :to="{ name: 'treinamento', params: { id: cursoProgresso.id } }">
+          {{ cursoProgresso.nome }} - progresso {{ cursoProgresso.progresso }}%
+        </router-link>
       </li>
     </ul>
   </div>
@@ -29,10 +32,12 @@
       this.progressoCursosUsuario = {
         cursosProgresso: [
           {
+            id: 88,
             nome: "nUnit",
             progresso: 10
           },
           {
+            id: 77,
             nome: "jasmine",
             progresso: 91
           }
