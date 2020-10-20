@@ -1,7 +1,12 @@
 <template>
   <div>
     <cabecalho />
-    <lista-de-treinamentos />
+    <h2>Dashboard</h2>
+    <ul>
+      <li v-for="cursoProgresso in progressoCursosUsuario.cursosProgresso">
+        {{ cursoProgresso.nome }} - progresso {{ cursoProgresso.progresso }}%
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -18,6 +23,20 @@
     data () {
       return {
         msg: 'Welcome to Your Vue.js App'
+      }
+    },
+    created() {
+      this.progressoCursosUsuario = {
+        cursosProgresso: [
+          {
+            nome: "nUnit",
+            progresso: 10
+          },
+          {
+            nome: "jasmine",
+            progresso: 91
+          }
+        ]
       }
     }
 }

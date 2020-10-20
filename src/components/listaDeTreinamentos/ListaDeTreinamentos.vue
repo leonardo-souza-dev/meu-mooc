@@ -1,21 +1,26 @@
 <template>
-  <section>
-    <h2>Treinamentos</h2>
-    <ul>
-      <li v-for="t in treinamentosPreview"> 
-        <treinamento-preview :nome="t.nome" :id="t.id" />
-      </li>
-    </ul>
-  </section>
+  <div>
+    <cabecalho />
+    <section>
+      <h2>Treinamentos</h2>
+      <ul>
+        <li v-for="t in treinamentosPreview"> 
+          <treinamento-preview :nome="t.nome" :id="t.id" />
+        </li>
+      </ul>
+    </section>
+  </div>
 </template>
 
 <script>
   import TreinamentoPreview from '../treinamentoPreview/TreinamentoPreview.vue'
+  import Cabecalho from '../cabecalho/Cabecalho.vue'
   
   export default {
     name: 'listaDeTreinamentos',
     components: {
-      'treinamento-preview': TreinamentoPreview
+      'treinamento-preview': TreinamentoPreview,
+      'cabecalho': Cabecalho
     },
     data () {
       return {
