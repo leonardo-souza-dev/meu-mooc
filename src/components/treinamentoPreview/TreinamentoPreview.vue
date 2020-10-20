@@ -8,8 +8,7 @@
 <script>
   export default {  
     name: 'treinamento',
-    props: ['id', 'nome'],
-    
+    props: ['id', 'nome'],    
     data () {
       return {
       }

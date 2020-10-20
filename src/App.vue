@@ -1,5 +1,5 @@
 <template>
-  <div class="corpo">
+  <div class="app">
     <router-view></router-view>
   </div>
 </template>
@@ -8,7 +8,7 @@
 </script>
 
 <style>
-  .corpo {
+  .app {
     font-family: Helvetica, sans-serif;
     margin: 0 auto;
     width: 96%;
