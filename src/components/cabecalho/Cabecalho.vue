@@ -7,6 +7,7 @@
             <li><router-link :to="{ name: 'home' }">sair</router-link></li>
         </ul>
         <span>{{matricula}}</span>
+        <hr />
     </header>
 </template>
 

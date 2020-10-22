@@ -2,13 +2,16 @@
   <div>
     <cabecalho />
     <section>
-      <h1>{{ treinamento.nome }}</h1>
+      <h1>Treinamento de {{ treinamento.nome }}</h1>
       <div>
         <ul>
-          <li v-for="nomeAula in treinamento.nomesAulas">{{ nomeAula }}</li>
+          <li v-for="aula in treinamento.aulas">Aula {{ aula.num }} - {{ aula.nome }}</li>
         </ul>
       </div>
-      <h2>{{ treinamento.videoAulaSendoExibida.nome }}</h2>
+      <h2>
+        Aula {{ treinamento.videoAulaSendoExibida.num }} - 
+        {{ treinamento.videoAulaSendoExibida.nome }}
+      </h2>
       <video width="320" height="240" controls>
         <source v-bind:src="treinamento.videoAulaSendoExibida.uri" type="video/mp4" />
         Your browser does not support the video tag.
@@ -34,7 +37,16 @@
       this.treinamento = {
         id: 99,
         nome: 'browser stack',
-        nomesAulas: ['montando ambiente', 'hello world', 'conclusoes'],
+        aulas: [
+          {
+            num: 1, nome: 'montando ambiente'
+          }, 
+          {
+            num: 2, nome: 'hello world'
+          },
+          {
+            num: 3, nome: 'conclusoes'
+          }],
         videoAulaSendoExibida: {
           num: 1,
           nome: 'montando ambiente',
