@@ -29,7 +29,7 @@
       }
     },
     created() {
-      this.$http.get('https://localhost:44337/treinamentos/')
+      this.$http.get('https://localhost:5001/treinamentos/')
         .then(res => res.json())
         .then(res => this.treinamentosPreview = res, err => console.log(err))
     }
