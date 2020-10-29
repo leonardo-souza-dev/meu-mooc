@@ -5,8 +5,8 @@
     <h3>Meus treinamentos em andamento</h3>
     <ul>
       <li v-for="t in treinamentosProgresso">
-        <router-link :to="{ name: 'treinamento', params: { id: t.id } }">
-          {{ t.treinamentoNome }} - progresso {{ t.progresso }}%
+        <router-link :to="{ name: 'treinamento', params: { id: t.treinamento.id } }">
+          {{ t.treinamento.nome }} - progresso {{ t.progresso }}%
         </router-link>
       </li>
     </ul>
@@ -25,12 +25,11 @@
     name: 'app',
     data () {
       return {
-        msg: 'Welcome to Your Vue.js App',
         treinamentosProgresso: []
       }
     },
     created() {
-      this.$http.get('https://localhost:5001/dashboard/')
+      this.$http.get('https://localhost:5001/dashboard/1')
         .then(res => res.json())
         .then(res => this.treinamentosProgresso = res.treinamentosProgresso, err => console.log(err))
     }
