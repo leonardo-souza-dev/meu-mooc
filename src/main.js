@@ -5,8 +5,8 @@ import VueRouter from 'vue-router';
 
 import { routes } from './routes'
 
-Vue.use(VueRouter);
 Vue.use(VueResouce);
+Vue.use(VueRouter);
 
 const router = new VueRouter({
   routes,

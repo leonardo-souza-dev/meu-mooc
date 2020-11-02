@@ -3,7 +3,7 @@
     <p>meu-mooc</p>
     <input type="text" placeholder="matrícula" />
     <input type="password" placeholder="senha" />
-    <router-link :to="{ name: 'dashboard' }">Login</router-link>
+    <router-link :to="{ name: 'dashboard', params: { usuarioId: 1 } }">Login</router-link>
   </div>
 </template>
 
@@ -19,19 +19,19 @@
       return {
         treinamento: {}
       }
-    },
-    created() {
-      this.treinamento = {
-        id: 99,
-        nome: 'browser stack',
-        nomesAulas: ['montando ambiente', 'hello world', 'conclusoes'],
-        videoAulaSendoExibida: {
-          num: 1,
-          nome: 'montando ambiente',
-          uri: 'https://www.w3schools.com/tags/movie.mp4'
-        }
-      }
     }
+    // ,created() {
+    //   this.treinamento = {
+    //     id: 99,
+    //     nome: 'browser stack',
+    //     nomesAulas: ['montando ambiente', 'hello world', 'conclusoes'],
+    //     videoAulaSendoExibida: {
+    //       num: 1,
+    //       nome: 'montando ambiente',
+    //       uri: 'https://www.w3schools.com/tags/movie.mp4'
+    //     }
+    //   }
+    // }
   }
 </script>
 

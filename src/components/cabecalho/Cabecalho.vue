@@ -6,7 +6,7 @@
             <li><router-link :to="{ name: 'dashboard' }">dashboard</router-link></li>
             <li><router-link :to="{ name: 'home' }">sair</router-link></li>
         </ul>
-        <span>{{matricula}}</span>
+        <span>{{usuario.matricula}}</span>
         <hr />
     </header>
 </template>
@@ -16,9 +16,14 @@ export default {
   name: 'cabecalho',
   data () {
     return {
-      matricula: 6804151514
+      usuario: {}
     }
-  }
+  },
+    created() {
+      this.$http.get('https://localhost:5001/usuarios/1')
+        .then(res => res.json())
+        .then(res => this.usuario = res, err => console.log(err))
+    }
 }
 </script>
 

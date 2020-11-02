@@ -23,17 +23,18 @@
       'lista-de-treinamentos': ListaDeTreinamentos
     },
     name: 'app',
+    props: ['usuarioId'],
     data () {
       return {
         treinamentosProgresso: []
       }
     },
     created() {
-      this.$http.get('https://localhost:5001/dashboard/1')
+      this.$http.get('https://localhost:5001/dashboards/usuario/' + this.$route.params.usuarioId)
         .then(res => res.json())
         .then(res => this.treinamentosProgresso = res.treinamentosProgresso, err => console.log(err))
     }
-}
+  }
 </script>
 
 <style>

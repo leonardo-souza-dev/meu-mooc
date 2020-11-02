@@ -11,7 +11,7 @@ export const routes = [
     titulo: 'meu-mooc' 
   }, 
   {
-    path: '/dashboard', 
+    path: '/dashboard/:usuarioId', 
     component: Dashboard, 
     name: 'dashboard',
     titulo: 'meu-mooc dashboard' 
